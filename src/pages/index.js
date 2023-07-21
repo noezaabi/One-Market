@@ -1,54 +1,28 @@
-import {
-  EthereumClient,
-  w3mConnectors,
-  w3mProvider,
-} from "@web3modal/ethereum";
-import { Web3Button, Web3Modal } from "@web3modal/react";
-import { configureChains, createConfig, useAccount, WagmiConfig } from "wagmi";
-import { arbitrum, mainnet, polygon } from "wagmi/chains";
-
-const chains = [arbitrum, mainnet, polygon];
-const projectId = "c44e93f1cfc8edec6ca7f7f8b119da5d";
-
-const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
-const wagmiConfig = createConfig({
-  autoConnect: true,
-  connectors: w3mConnectors({ projectId, chains }),
-  publicClient,
-});
-const ethereumClient = new EthereumClient(wagmiConfig, chains);
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Web3Button } from "@web3modal/react";
+import { Plus } from "lucide-react";
 import { Inter } from "next/font/google";
+import { useAccount } from "wagmi";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const account = useAccount();
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-center p-24`}
-    >
-      <WagmiConfig config={wagmiConfig}>
-        <HomePage />
-      </WagmiConfig>
+    <main className={`flex min-h-screen flex-col`}>
+      <div className="flex w-screen px-14 py-6 justify-between border-b-2">
+        <h1 className={`text-3xl font-bold `}>One Market</h1>
+        <div className="flex w-1/2  items-center space-x-2 ">
+          <Input type="email" placeholder="Email" />
+          <Button variant="outline" size="icon">
+            <Plus className="h-4 w-4" />
+          </Button>
+        </div>
 
-      <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
+        <Web3Button />
+      </div>
     </main>
   );
 }
-
-const HomePage = () => {
-  const account = useAccount();
-  return (
-    <div className="flex flex-col items-center justify-center">
-      {account && account.isConnected ? (
-        <div>
-          <h1 className={`text-4xl font-bold`}>{account.address}</h1>
-        </div>
-      ) : (
-        <div>
-          <h1 className={`text-4xl font-bold`}>Please Connect</h1>
-        </div>
-      )}
-      <Web3Button />
-    </div>
-  );
-};
