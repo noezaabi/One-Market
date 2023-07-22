@@ -13,7 +13,9 @@ const Header = React.forwardRef(({ className, title, ...props }, ref) => {
 
   return (
     <div className={styles.mainHeader}>
-      <div className={styles.logoHeader}>One Chance</div>
+      <Link href="/">
+        <div className={styles.logoHeader}>One Chance</div>
+      </Link>
       <div className={styles.searchAndAddHeader}>
         <div className={styles.searchDivHeader}>
           <Link href="/search">
@@ -35,7 +37,9 @@ const Header = React.forwardRef(({ className, title, ...props }, ref) => {
           </Link>
           <input type="text" />
         </div>
-        <div className={styles.addBtnHeader}>+</div>
+        <Link href="/sell">
+          <div className={styles.addBtnHeader}>+</div>
+        </Link>
       </div>
       <div className={styles.connectHeader} onClick={handleSignInClick}>
         {isSignedIn && (
