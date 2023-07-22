@@ -63,8 +63,8 @@ export default function Home() {
         <div className={styles.secondIndex}>
           <div>Trending categories 🔥</div>
           <div className={styles.categoriesIndex}>
-            {categ.map((e) => (
-              <div>
+            {categ.map((e, index) => (
+              <div key={index}>
                 <img src={e.img} alt="" />
                 <div>{e.name}</div>
               </div>
