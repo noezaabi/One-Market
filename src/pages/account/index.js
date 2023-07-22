@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Header from "@/components/ui/header";
-import Card from "@/components/ui/card";
+import Header from "../../components/ui/header";
+import Card from "../../components/ui/card";
 
 import styles from "./Account.module.css";
 

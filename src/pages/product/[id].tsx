@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Header from "@/components/ui/header";
+import Header from "../../components/ui/header";
 import Link from 'next/link';
 
 import styles from "./Product.module.css";
