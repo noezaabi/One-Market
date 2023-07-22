@@ -134,3 +134,13 @@
     display: flex;
     gap: 12px;
 }
+
+.carouselAccount>*>* {
+    display: flex;
+    gap: 12px;
+    min-width: 300px;
+}
+
+.carouselAccount>*>*>* {
+    width: 100%;
+}

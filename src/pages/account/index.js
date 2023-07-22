@@ -26,7 +26,7 @@ export default function Account() {
             <div className={styles.nameCategAccount}>Last products boughts</div>
             <div className={styles.carouselAccount}>
               <div>
-                <Link href="/product/4RREH34JZ">
+                <Link href="/product/76258">
                   <Card title="Very very cool bike" />
                 </Link>
                 <Card title="Very very cool bike" />
