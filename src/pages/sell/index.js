@@ -90,7 +90,7 @@ export default function Sell() {
           ></textarea>
         </label>
         <label htmlFor="" className={styles.labelSell}>
-          <div>What's the price?</div>
+          <div>What&apos;s the price?</div>
           <input
             type="number"
             name="price"
