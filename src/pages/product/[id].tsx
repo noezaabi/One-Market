@@ -23,9 +23,9 @@ export default function Page() {
                 ensures a dynamic ride in any terrain. <br />
                 <br />
                 Well-maintained and in excellent condition, this bike is ready to
-                provide you with endless cycling adventures. Don't miss out on this
+                provide you with endless cycling adventures. Don&apos;t miss out on this
                 fantastic deal! Contact me today for more details or to arrange a
-                viewing. Hurry, this won't last long!
+                viewing. Hurry, this won&apos;t last long!
               </div>
             </div>
             <div className={styles.rightProduct}>
