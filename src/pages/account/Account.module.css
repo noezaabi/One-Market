@@ -63,6 +63,14 @@
     gap: 10px;
 }
 
+.divImgAccount>*:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #2aa555;
+    border-radius: 16px;
+}
+
 .imgAccount {
     border-radius: 16px;
 }

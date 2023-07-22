@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Header from "@/components/ui/header";
 import Card from "@/components/ui/card";
 
 import styles from "./Search.module.css";
@@ -5,11 +7,13 @@ import styles from "./Search.module.css";
 export default function Search() {
   return (
     <div className={styles.containerSearch}>
-      <div className={styles.header}>Header here</div>
+      <Header />
       <div className={styles.mainSearch}>
         <div className="font-bold"> Here are the products for“ Bicycles” </div>{" "}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <Card title="Bicycle" img="./ee.png" />
+        <div className={styles.mosaicSearch}>
+          <Link href="/product/5452547354">
+            <Card title="Bicycle" img="./ee.png" />
+          </Link>
           <Card title="Bicycle 2" />
           <Card title="Bicycle 3" />
           <Card title="Bicycle 4" />

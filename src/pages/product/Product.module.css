@@ -1,4 +1,4 @@
-.containerSearch {
+.containerProduct {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,51 +16,6 @@
     margin: 0 10px 24px 10px;
     border-radius: 24px;
     padding: 24px;
-}
-
-.mainSearch {
-    display: flex;
-    flex-direction: column;
-    background-color: #EAECF7;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 10px;
-    padding: 24px;
-    border-radius: 16px;
-    gap: 10px;
-}
-
-.mosaicSearch {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 16px;
-}
-
-.mosaicSearch>* {
-    min-width: inherit;
-    width: 100%;
-}
-
-@media only screen and (max-width: 950px) {
-    .mosaicSearch {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .mosaicSearch {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/****Product****/
-
-.containerProduct {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .mainProduct {
