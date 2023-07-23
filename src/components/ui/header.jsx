@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Header.module.css";
+import { Web3Button } from "@web3modal/react";
 
 import { cn } from "../../lib/utils";
 
@@ -9,6 +10,18 @@ const Header = React.forwardRef(({ className, title, ...props }, ref) => {
 
   const handleSignInClick = () => {
     setIsSignedIn((prevState) => !prevState);
+  };
+
+  const handleInputKeyPress = (event) => {
+    // Check if the pressed key is Enter (key code 13)
+    if (event.key === "Enter") {
+      // Get the value from the input field
+      const searchValue = event.target.value;
+      console.log(searchValue);
+      // Navigate to the search page with the value from the input field
+      // router.push(`/search/${searchValue}`);
+      window.location.href = "/search/" + searchValue;
+    }
   };
 
   return (
@@ -35,20 +48,21 @@ const Header = React.forwardRef(({ className, title, ...props }, ref) => {
               </svg>
             </div>
           </Link>
-          <input type="text" />
+          <input type="text" onKeyPress={(e) => handleInputKeyPress(e)} />
         </div>
         <Link href="/sell">
           <div className={styles.addBtnHeader}>+</div>
         </Link>
       </div>
-      <div className={styles.connectHeader} onClick={handleSignInClick}>
+      {/* <div className={styles.connectHeader} onClick={handleSignInClick}>
         {isSignedIn && (
           <div className={styles.avatarNouns}>
             <img src="/nouns.png" alt="" />
           </div>
         )}
         {isSignedIn ? "David" : "Sign in"}
-      </div>
+      </div> */}
+      <Web3Button />
     </div>
   );
 });

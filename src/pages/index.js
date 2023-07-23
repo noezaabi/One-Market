@@ -1,7 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { Web3Button } from "@web3modal/react";
 import { Plus } from "lucide-react";
 import { Inter } from "next/font/google";
 import { useAccount } from "wagmi";
@@ -21,6 +20,16 @@ const categ = [
 ];
 
 const questions = [
+  {
+    question: "What can I sell on One Chance?",
+    answer:
+      "Everything it can be cars, clothes, computers, furnitures and so on...",
+  },
+  {
+    question: "What is the process to buy something?",
+    answer:
+      "You select the item you want, then you buy it in the whatever coin you want and chain, then once the seller received ethe money he sends the item throught the post.",
+  },
   {
     question: "What is the difference with a normal marketplace?",
     answer:
@@ -74,16 +83,7 @@ export default function Home() {
         <div>
           <Accordeons questions={questions} />
         </div>
-      </div>
-      <div className="flex w-screen px-14 py-6 justify-between border-b-2">
-        <h1 className={`text-3xl font-bold `}> One Market </h1>
-        <div className="flex w-1/2  items-center space-x-2 ">
-          <Input type="email" placeholder="Email" />
-          <Button variant="outline" size="icon">
-            <Plus className="h-4 w-4" />
-          </Button>
-        </div>
-        <Web3Button />
+        <div></div>
       </div>
     </main>
   );

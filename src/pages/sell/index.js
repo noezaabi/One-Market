@@ -11,6 +11,7 @@ export default function Sell() {
     price: "",
     blockchains: [],
   });
+  const listBlockchain = ["Ethereum", "Polygon", "Gnosis", "ZKsync"];
 
   useEffect(() => {
     // Vérifiez si le formulaire est complet ici
@@ -110,7 +111,7 @@ export default function Sell() {
                 style={{ backgroundColor: selected ? "#DCE1FB" : "" }}
                 onClick={() => handleClick(index)}
               >
-                Bouton {index + 1}
+                {listBlockchain[index]}
               </button>
             ))}
           </div>

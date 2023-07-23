@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useAccount, useContract } from "wagmi";
 
 import Header from "../../components/ui/header";
 import Card from "../../components/ui/card";
@@ -6,6 +7,8 @@ import Card from "../../components/ui/card";
 import styles from "./Account.module.css";
 
 export default function Account() {
+  const { address, isConnecting, isDisconnected } = useAccount();
+  console.log(address);
   return (
     <div className={styles.containerAccount}>
       <Header />
@@ -15,7 +18,12 @@ export default function Account() {
             <div>
               <img src="/nouns.png" alt="" className={styles.imgAccount} />
             </div>
-            <div className={styles.nameAccount}>David.eth</div>
+            <div className={styles.nameAccount}>
+              {address &&
+                address.substring(0, 5) +
+                  "..." +
+                  address.substring(address.length - 3)}
+            </div>
           </div>
           <div className={styles.msgAccount}>Messages</div>
           <div className={styles.settingAccount}>Setting</div>
